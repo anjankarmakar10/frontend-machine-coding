@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
+/* main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,4 +10,4 @@ main {
   height: 100vh;
   background: hsl(210deg 15% 6%);
   color: white;
-}
+} */

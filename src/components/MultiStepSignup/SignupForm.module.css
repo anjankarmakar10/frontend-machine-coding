@@ -1,0 +1,92 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.header {
+  padding: 24px 8px;
+  background: hsl(240deg 60% 25%);
+  color: white;
+}
+
+.step {
+  flex: 1;
+  padding: 32px;
+}
+.step h2 {
+  margin-bottom: 1em;
+}
+.step label {
+  color: hsl(240deg 30% 30%);
+}
+.step input:not([type="radio"]) {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 4px 8px;
+  border: 1px solid gray;
+}
+
+.planList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  list-style-type: none;
+}
+.planList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid hsl(240deg 30% 80%);
+  border-radius: 8px;
+  background: white;
+}
+.planList li:has(input:checked) {
+  border: 1px solid hsl(240deg 30% 60%);
+  background: hsl(240deg 50% 92%);
+}
+.planList .planTitle {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.planList li input {
+  /* Optical alignment */
+  transform: translateY(5.5px);
+}
+
+.step dl {
+  border: 1px dashed hsl(240deg 30% 80%);
+  padding: 16px;
+}
+.step dt {
+  font-weight: bold;
+  color: hsl(240deg 30% 30%);
+}
+.step dd {
+  margin-bottom: 1em;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  background: hsl(240deg 50% 92%);
+}
+.btn {
+  padding: 8px 24px;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn.primary {
+  border: none;
+  background: hsl(240deg 60% 25%);
+  color: white;
+}
+.btn.secondary {
+  border: 1px solid hsl(240deg 60% 25%);
+  color: hsl(240deg 60% 25%);
+}

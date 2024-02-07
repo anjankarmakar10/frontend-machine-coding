@@ -1,10 +1,9 @@
-import StarfieldButton from "./components/StarfieldButton";
+import MultiStepSignup from "./components/MultiStepSignup";
 
 function App() {
   return (
     <main>
-      <StarfieldButton letter="w" onClick={() => alert("H")} />
-      <StarfieldButton letter="e" onClick={() => alert("H")} />
+      <MultiStepSignup />
     </main>
   );
 }
