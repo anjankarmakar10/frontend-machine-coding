@@ -89,7 +89,7 @@ function SignupForm() {
       {step === 3 && (
         <Summary
           information={information}
-          selectedPlanData={selectedPlanData.label}
+          selectedPlanData={selectedPlanData}
         />
       )}
 
@@ -175,7 +175,7 @@ const Summary = ({ information, selectedPlanData }) => {
         <dt>Email:</dt>
         <dd>{information.email}</dd>
         <dt>Plan:</dt>
-        <dd>{selectedPlanData || "(None)"}</dd>
+        <dd>{selectedPlanData?.label || "(None)"}</dd>
       </dl>
     </section>
   );
