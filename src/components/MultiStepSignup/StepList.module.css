@@ -16,6 +16,11 @@
   text-transform: uppercase;
   font-weight: 500;
   opacity: 0.6;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
 }
 .stepListItem.active {
   opacity: 1;

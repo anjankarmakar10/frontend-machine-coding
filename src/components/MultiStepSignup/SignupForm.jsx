@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 import clsx from "clsx";
 
 import StepList from "./StepList";
@@ -114,8 +114,9 @@ const Info = ({ information, setInformation }) => {
     <section className={styles.step}>
       <h2>Personal Information</h2>
 
-      <label>Preferred name:</label>
+      <label htmlFor="name">Preferred name:</label>
       <input
+        id="name"
         value={information.name}
         onChange={(e) =>
           setInformation({ ...information, name: e.target.value })
@@ -124,8 +125,9 @@ const Info = ({ information, setInformation }) => {
         type="text"
       />
 
-      <label>Email address:</label>
+      <label htmlFor="email">Email address:</label>
       <input
+        id="email"
         value={information.email}
         onChange={(e) =>
           setInformation({ ...information, email: e.target.value })
@@ -138,27 +140,34 @@ const Info = ({ information, setInformation }) => {
 };
 
 const Plan = ({ plan: value, setPlan }) => {
+  const id = useId();
+
   return (
     <section className={styles.step}>
       <h2>Select Plan</h2>
 
       <ul className={styles.planList}>
-        {PLANS.map((plan) => (
-          <li key={plan.value}>
-            <input
-              value={plan.value}
-              onChange={(e) => setPlan(e.target.value)}
-              required
-              type="radio"
-              name="plan"
-              checked={value === plan.value}
-            />
-            <label>
-              <span className={styles.planTitle}>{plan.label}</span>
-              <p>{plan.description}</p>
-            </label>
-          </li>
-        ))}
+        {PLANS.map((plan) => {
+          const labelId = `${id}-${plan.value}`;
+
+          return (
+            <li key={plan.value}>
+              <input
+                id={labelId}
+                value={plan.value}
+                onChange={(e) => setPlan(e.target.value)}
+                required
+                type="radio"
+                name="plan"
+                checked={value === plan.value}
+              />
+              <label htmlFor={labelId}>
+                <span className={styles.planTitle}>{plan.label}</span>
+                <p>{plan.description}</p>
+              </label>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
