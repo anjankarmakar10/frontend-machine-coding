@@ -1,9 +1,9 @@
-import MultiStepSignup from "./components/MultiStepSignup";
+import ClickingOutside from "./components/ClickingOutside/ClickingOutside";
 
 function App() {
   return (
     <main>
-      <MultiStepSignup />
+      <ClickingOutside />
     </main>
   );
 }

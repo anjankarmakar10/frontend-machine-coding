@@ -1,0 +1,66 @@
+.container {
+  background: hsl(270deg 80% 90%);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.wrapper {
+  position: relative;
+}
+.accountToggleTrigger {
+  --shadow-color: hsl(270deg 40% 50% / 0.125);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-content: center;
+  padding: 0;
+  border: 2px solid white;
+  border-radius: 1000px;
+  background: white;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px var(--shadow-color), 0px 2px 4px var(--shadow-color),
+    0px 5px 10px var(--shadow-color);
+  cursor: pointer;
+}
+.popover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px;
+  width: 150px;
+  border-radius: 8px;
+  background: white;
+  transform: translate(calc(-50% + 24px), calc(100% + 12px));
+}
+.popover::before {
+  --size: 12px;
+  content: "";
+  position: absolute;
+  top: calc(var(--size) * -0.5 + 1px);
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: var(--size);
+  height: var(--size);
+  background: inherit;
+  border-radius: calc(var(--size) * 0.25);
+  transform: rotate(45deg);
+}
+.accountLinks {
+  padding: 0;
+  list-style-type: none;
+}
+.accountLinks a {
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  color: hsl(270deg 20% 30%);
+  text-decoration: none;
+  text-align: center;
+}
+.accountLinks a:hover {
+  color: black;
+  background: hsl(270deg 80% 96%);
+}
